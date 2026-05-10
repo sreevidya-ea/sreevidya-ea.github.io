@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sreevidya E.A.
 
-## Getting Started
+Researcher, educator, and science communicator working at the intersection of ecology, environmental systems, sustainability, and reflective inquiry.
 
-First, run the development server:
+My work spans environmental education, interdisciplinary research, public speaking, curriculum design, and science communication, with a focus on making complex ecological ideas accessible, meaningful, and deeply human.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+With a background in Environmental Science and Agriculture, my research explores sacred groves, ecological resilience, conservation in semi-urban landscapes, and the relationship between human systems and environmental memory.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Alongside research, I work extensively in:
+- environmental education
+- digital pedagogy
+- public speaking
+- expressive clarity
+- science communication
+- curriculum development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+I am particularly interested in how education, storytelling, and thoughtful communication can cultivate ecological awareness and collective responsibility.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Areas of Interest
 
-To learn more about Next.js, take a look at the following resources:
+- Ecology & Conservation
+- Sacred Groves & Cultural Landscapes
+- Sustainability Education
+- Science Communication
+- Environmental Humanities
+- Digital Learning
+- Interconnected Systems
+- Reflective Pedagogy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Selected Research Themes
 
-## Deploy on Vercel
+- Ecological importance of sacred groves
+- Land-use dynamics in semi-urban landscapes
+- Conservation strategies in heterogeneous ecosystems
+- Community-centred environmental education
+- Communication and expressive clarity in learning
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Philosophy
+
+I believe research should not remain confined to institutions alone.
+
+Knowledge becomes meaningful when it is communicated clearly, shared generously, and connected to lived human experience.
