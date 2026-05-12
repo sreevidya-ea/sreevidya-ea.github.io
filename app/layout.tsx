@@ -13,7 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Sreevidya E.A.",
+  title: "Dr Sreevidya E.A.",
   description: "Ecology, systems, and reflective inquiry.",
 };
 

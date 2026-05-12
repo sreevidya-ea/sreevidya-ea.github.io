@@ -1,15 +1,8 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 
 import ForestLayout from "../components/ForestLayout";
 
-import {
-  motion,
-  useScroll,
-  useTransform,
-} from "framer-motion";
-
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 const experience = [
   {
@@ -47,62 +40,34 @@ function ExperienceCard({
   item: (typeof experience)[0];
   index: number;
 }) {
-  const ref =
-    useRef<HTMLDivElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-
-  const y = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [40, -40]
-  );
-
-  const rotate = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [-1.2, 1.2]
-  );
-
   return (
     <motion.div
-      ref={ref}
-      style={{
-        y,
-        rotate,
-      }}
       initial={{
         opacity: 0,
         scale: 0.96,
-        x:
-          index % 2 === 0
-            ? -40
-            : 40,
+        y: 40,
       }}
       whileInView={{
         opacity: 1,
         scale: 1,
-        x: 0,
+        y: 0,
       }}
       transition={{
-        duration: 1,
-        delay: index * 0.12,
+        duration: 0.9,
+        delay: index * 0.08,
       }}
       viewport={{
         once: true,
       }}
       whileHover={{
-        y: -6,
+        y: -8,
+        scale: 1.01,
       }}
       className={`
         relative
-        w-[42vw]
-        min-w-[460px]
-        max-w-[560px]
-        h-[460px]
+        min-w-[420px]
+        max-w-[420px]
+        h-[500px]
         rounded-[2.8rem]
         overflow-hidden
         border
@@ -113,6 +78,7 @@ function ExperienceCard({
         flex
         items-end
         p-10
+        snap-start
         ${
           index % 2 === 0
             ? "rotate-[-1deg]"
@@ -148,16 +114,31 @@ function ExperienceCard({
           absolute
           -top-20
           right-0
-          w-[260px]
-          h-[260px]
+          w-[240px]
+          h-[240px]
           rounded-full
           bg-[#D8C38F]/10
           blur-3xl
         "
       />
 
+      {/* WATERMARK */}
+      <div
+        className="
+          absolute
+          top-8
+          right-8
+          text-6xl
+          font-serif
+          text-[#D8C38F]/[0.05]
+          pointer-events-none
+        "
+      >
+        {item.year.slice(0, 4)}
+      </div>
+
       {/* CONTENT */}
-      <div className="relative z-10 max-w-md">
+      <div className="relative z-10 max-w-sm">
         <p
           className="
             text-[#D8C38F]
@@ -321,96 +302,72 @@ export default function ExperiencePage() {
           </div>
         </section>
 
-        {/* TIMELINE */}
+        {/* CAROUSEL */}
         <section
           className="
             relative
             z-10
-            px-10
-            pb-32
+            overflow-hidden
+            pl-10
+            pb-28
           "
         >
-          {/* CENTER LINE */}
+          {/* Ambient */}
           <div
             className="
               absolute
-              left-1/2
-              top-0
-              bottom-0
-              -translate-x-1/2
-              w-px
-              bg-gradient-to-b
-              from-transparent
-              via-[#D8C38F]/15
-              to-transparent
+              inset-0
+              pointer-events-none
             "
-          />
+          >
+            <div
+              className="
+                absolute
+                top-10
+                left-20
+                w-[320px]
+                h-[320px]
+                rounded-full
+                bg-[#6D8A52]/10
+                blur-3xl
+              "
+            />
 
+            <div
+              className="
+                absolute
+                bottom-0
+                right-20
+                w-[260px]
+                h-[260px]
+                rounded-full
+                bg-[#395A63]/10
+                blur-3xl
+              "
+            />
+          </div>
+
+          {/* Scroll Row */}
           <div
             className="
               relative
+              z-10
               flex
-              flex-col
+              gap-10
+              overflow-x-auto
+              pb-8
+              pr-20
+              snap-x
+              snap-mandatory
+              scrollbar-none
             "
           >
             {experience.map((item, index) => (
-              <div
+              <ExperienceCard
                 key={item.role}
-                className={`
-                  relative
-                  flex
-                  items-center
-                  ${
-                    index % 2 === 0
-                      ? "justify-start"
-                      : "justify-end"
-                  }
-                  ${
-                    index !== 0
-                      ? "-mt-24"
-                      : ""
-                  }
-                `}
-              >
-                {/* CONNECTOR */}
-                <div
-                  className={`
-                    absolute
-                    top-1/2
-                    -translate-y-1/2
-                    h-px
-                    bg-[#D8C38F]/15
-                    w-[90px]
-                    ${
-                      index % 2 === 0
-                        ? "right-[calc(50%-45px)]"
-                        : "left-[calc(50%-45px)]"
-                    }
-                  `}
-                />
-
-                {/* NODE */}
-                <div
-                  className="
-                    absolute
-                    left-1/2
-                    top-1/2
-                    -translate-x-1/2
-                    -translate-y-1/2
-                    w-4
-                    h-4
-                    rounded-full
-                    bg-[#E7D9A8]
-                    shadow-[0_0_25px_rgba(231,217,168,0.7)]
-                    z-30
-                  "
-                />
-
-                <ExperienceCard
-                  item={item}
-                  index={index}
-                />
-              </div>
+                item={item}
+                index={index}
+              />
             ))}
           </div>
         </section>

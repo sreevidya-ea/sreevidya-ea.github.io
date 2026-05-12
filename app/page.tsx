@@ -182,7 +182,7 @@ export default function Home() {
 
               <Image
                 src="/images/sreevidya-profile.jpg"
-                alt="Sreevidya E.A."
+                alt="Dr Sreevidya E.A."
                 fill
                 priority
                 className="object-cover scale-105"
@@ -200,7 +200,7 @@ export default function Home() {
                 mb-5
               "
             >
-              Sreevidya E.A.
+              Dr Sreevidya E.A.
             </h1>
 
             {/* Subtitle */}
@@ -279,7 +279,7 @@ export default function Home() {
 
             <Image
               src="/images/sreevidya-profile.jpg"
-              alt="Sreevidya E.A."
+              alt="Dr Sreevidya E.A."
               fill
               priority
               className="object-cover scale-105"
@@ -298,7 +298,7 @@ export default function Home() {
               mb-4
             "
           >
-            Sreevidya E.A.
+            Dr Sreevidya E.A.
           </h1>
 
           {/* Subtitle */}

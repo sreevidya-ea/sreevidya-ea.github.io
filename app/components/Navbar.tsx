@@ -11,7 +11,7 @@ const links = [
   {
     name: "About",
     href: "/about",
-    icon: "✦",
+    icon: "◌",
   },
   {
     name: "Education",
@@ -21,18 +21,23 @@ const links = [
   {
     name: "Experience",
     href: "/experience",
-    icon: "❋",
+    icon: "✤",
   },
   {
     name: "Research",
     href: "/research",
-    icon: "✺",
+    icon: "⟡",
   },
   {
     name: "Milestones",
     href: "/milestones",
     icon: "❁",
   },
+  {
+    name: "Personal",
+    href: "/personal",
+    icon: "✒",
+  }
 ];
 
 export default function Navbar() {

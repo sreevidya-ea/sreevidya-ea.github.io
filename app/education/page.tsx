@@ -200,7 +200,6 @@ export default function EducationPage() {
   useEffect(() => {
     const maxScroll = -1850;
     const minScroll = 0;
-    const overscroll = 220;
 
     let timeout: NodeJS.Timeout;
 
@@ -222,12 +221,13 @@ export default function EducationPage() {
         next = maxScroll - excess * 0.28;
         }
 
-        // allow elastic movement
-        next = Math.max(
-        maxScroll - overscroll,
-        Math.min(minScroll + overscroll, next)
-        );
+        if (next > minScroll) {
+          next = minScroll + (next - minScroll) * 0.18;
+        }
 
+        if (next < maxScroll) {
+          next = maxScroll + (next - maxScroll) * 0.18;
+        }
         x.set(next);
 
         // spring back after scroll stops
