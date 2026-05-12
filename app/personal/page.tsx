@@ -298,7 +298,7 @@ function Chamber({
 
 export default function PersonalPage() {
   return (
-    <ForestLayout>
+    <ForestLayout backgroundImage="/images/deep-woods-bg.png">
       <main
         className="
           relative
@@ -306,7 +306,7 @@ export default function PersonalPage() {
           overflow-y-scroll
           snap-y
           snap-mandatory
-          bg-[#03100B]
+          bg-transparent
           text-[#F5F1E8]
         "
       >

@@ -323,13 +323,13 @@ function ResearchFragment({
 
 export default function ResearchPage() {
   return (
-    <ForestLayout>
+    <ForestLayout backgroundImage="/images/sacred-grove-bg.png">
       <main
         className="
           relative
           min-h-screen
           overflow-hidden
-          bg-[#03100B]
+          bg-transparent
           text-[#F5F1E8]
         "
       >

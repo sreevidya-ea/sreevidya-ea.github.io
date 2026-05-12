@@ -12,7 +12,7 @@ const interests = [
 
 export default function AboutPage() {
   return (
-    <ForestLayout>
+    <ForestLayout backgroundImage="/images/spare-forest-bg.png">
       <main
         className="
           relative

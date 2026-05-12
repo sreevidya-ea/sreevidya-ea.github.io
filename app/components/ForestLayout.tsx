@@ -4,12 +4,17 @@ import { motion } from "framer-motion";
 import { ReactNode, useMemo } from "react";
 import Navbar from "./Navbar";
 
+interface ForestLayoutProps {
+  children: ReactNode;
+  backgroundImage?: string;
+  overlayOpacity?: string;
+}
+
 export default function ForestLayout({
   children,
-}: {
-  children: ReactNode;
-}) {
-  // deterministic rain particles
+  backgroundImage = "/images/forest-bg.png",
+  overlayOpacity = "opacity-90",
+}: ForestLayoutProps) {
   const rain = useMemo(
     () =>
       Array.from({ length: 90 }).map((_, i) => ({
@@ -22,7 +27,6 @@ export default function ForestLayout({
     []
   );
 
-  // deterministic fireflies
   const fireflies = useMemo(
     () =>
       Array.from({ length: 35 }).map((_, i) => ({
@@ -40,18 +44,18 @@ export default function ForestLayout({
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#08110D] text-[#F4F0E8]">
-      {/* Forest Background */}
+      {/* Dynamic Background */}
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-30"
+        className={`absolute inset-0 bg-cover bg-center ${overlayOpacity}`}
         style={{
-          backgroundImage: "url('/images/forest-bg.png')",
+          backgroundImage: `url('${backgroundImage}')`,
         }}
       />
 
-      {/* Deep forest overlay */}
+      {/* Deep overlay */}
       <div className="absolute inset-0 bg-[#08110D]/70" />
 
-      {/* Warm canopy glow */}
+      {/* Golden glow */}
       <div
         className="
           absolute inset-0
@@ -59,7 +63,7 @@ export default function ForestLayout({
         "
       />
 
-      {/* Green atmospheric bloom */}
+      {/* Forest bloom */}
       <div
         className="
           absolute inset-0
@@ -67,7 +71,7 @@ export default function ForestLayout({
         "
       />
 
-      {/* Ambient mist layer */}
+      {/* Mist */}
       <motion.div
         animate={{
           x: [0, 60, 0],
@@ -177,50 +181,7 @@ export default function ForestLayout({
         ))}
       </div>
 
-      {/* Soft floating pollen */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-40">
-        {fireflies.slice(0, 18).map((pollen) => (
-          <motion.div
-            key={`pollen-${pollen.id}`}
-            animate={{
-              y: [0, -80],
-              opacity: [0, 0.4, 0],
-            }}
-            transition={{
-              duration: 8 + pollen.id * 0.3,
-              repeat: Infinity,
-              ease: "easeOut",
-              delay: pollen.delay,
-            }}
-            className="
-              absolute
-              rounded-full
-              bg-[#F4E7B2]
-              blur-sm
-            "
-            style={{
-              width: "2px",
-              height: "2px",
-              left: `${pollen.left}%`,
-              top: `${pollen.top + 10}%`,
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Bottom darkness */}
-      <div
-        className="
-          absolute bottom-0 left-0
-          w-full h-72
-          opacity-50
-          bg-gradient-to-t
-          from-[#020403]
-          to-transparent
-        "
-      />
-
-      {/* Cinematic vignette */}
+      {/* Vignette */}
       <div
         className="
           absolute inset-0

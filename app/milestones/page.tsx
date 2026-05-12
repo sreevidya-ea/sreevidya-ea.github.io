@@ -291,7 +291,7 @@ function Milestone({
 
 export default function MilestonesPage() {
   return (
-    <ForestLayout>
+    <ForestLayout backgroundImage="/images/conference-bg.png">
       <main
         className="
           relative
@@ -299,7 +299,7 @@ export default function MilestonesPage() {
           overflow-y-scroll
           snap-y
           snap-mandatory
-          bg-[#03100B]
+          bg-transparent
           text-[#F5F1E8]
         "
       >

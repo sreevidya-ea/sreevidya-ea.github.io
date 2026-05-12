@@ -188,13 +188,13 @@ function ExperienceCard({
 
 export default function ExperiencePage() {
   return (
-    <ForestLayout>
+    <ForestLayout backgroundImage="/images/farm-bg.png">
       <main
         className="
           relative
           min-h-screen
           overflow-hidden
-          bg-[#03100B]
+          bg-transparent
         "
       >
         {/* BACKGROUND */}

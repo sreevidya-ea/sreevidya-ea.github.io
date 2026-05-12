@@ -261,12 +261,13 @@ export default function EducationPage() {
     }, [x]);
 
   return (
-    <ForestLayout>
+    <ForestLayout backgroundImage="/images/uni-bg.png">
       <main
         className="
           relative
           h-screen
           overflow-hidden
+          bg-transparent
         "
       >
         {/* LEFT PANEL */}
